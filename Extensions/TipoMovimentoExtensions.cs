@@ -11,12 +11,12 @@ namespace AttributeExample.Extensions
       int currentPositionOrder = value.GetCurrentEnumValueOrder();
       Type enumType = typeof(T);
 
-      var moves = enumType.GetEnumNames()
+      List<KeyValuePair<T, OrdemSequencialAttribute?>> moves = enumType.GetEnumNames()
               .ToList()
               .Select(enumValueName =>
               {
-                System.Reflection.MemberInfo[] memberInfoArray = enumType.GetMember(enumValueName);
-                var currentSquenceOrderAttribute = memberInfoArray
+                MemberInfo[] memberInfoArray = enumType.GetMember(enumValueName);
+                OrdemSequencialAttribute? currentSquenceOrderAttribute = memberInfoArray
                             .Select(memberInfo => memberInfo.GetCustomAttribute<OrdemSequencialAttribute>())
                             .FirstOrDefault();
 
