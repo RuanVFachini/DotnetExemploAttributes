@@ -2,14 +2,15 @@ using AttributeExample.Enums;
 using AttributeExample.Extensions;
 using AttributeExample.Models;
 
-namespace AttributeExample.Services;
-
-public static class MovimentoService
+namespace AttributeExample.Services
 {
-  public static void AbrirPorta(Carro carro, LadoEnum lado, RotacaoPortaEnum value)
+  public static class MovimentoService
   {
-    var portaLado = carro.Ports.First(x => x.Lado == lado);
-    portaLado.Estado.ValidateExecutionOrder(TipoAcaoEnum.MoverPorta, value);
-    portaLado.Estado = value;
+    public static void AbrirPorta(Carro carro, LadoEnum lado, RotacaoPortaEnum value)
+    {
+      Porta portaLado = carro.Portas.First(x => x.Lado == lado);
+      portaLado.Estado.ValidateExecutionOrder(TipoAcaoEnum.MoverPorta, value);
+      portaLado.Estado = value;
+    }
   }
 }

@@ -6,7 +6,7 @@ namespace AttributeExample.Models
 
     public string Marca { get; set; } = marca;
 
-    public List<Porta> Ports { get; set; } = [
+    public List<Porta> Portas { get; set; } = [
       new Porta(Enums.LadoEnum.Direito),
       new Porta(Enums.LadoEnum.Esquerdo)];
   }

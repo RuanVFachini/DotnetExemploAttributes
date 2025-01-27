@@ -4,7 +4,7 @@ using AttributeExample.Models;
 using AttributeExample.Services;
 
 //Inicaliza object
-Carro carro = new("Onix", "Chevrolet");
+Carro carro = new("Carro velho", "Marca de carro velho");
 PrintarEstadoAtual(carro);
 
 MovimentoService.AbrirPorta(carro, LadoEnum.Direito, RotacaoPortaEnum.PrimeiroEstagio);
